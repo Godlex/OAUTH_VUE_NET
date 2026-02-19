@@ -1,0 +1,18 @@
+@page
+@model OAUTH_VUE_NET.IdentityServer.Pages.Error.IndexModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="card">
+    <h1>Oops! Something went wrong</h1>
+    @if (Model.Error != null)
+    {
+        <p class="subtitle">@Model.Error.Error: @Model.Error.ErrorDescription</p>
+    }
+    else
+    {
+        <p class="subtitle">An unexpected error occurred.</p>
+    }
+    <a href="/" class="btn btn-secondary" style="text-decoration:none;display:inline-block;width:auto;margin-top:1rem;">Go Home</a>
+</div>

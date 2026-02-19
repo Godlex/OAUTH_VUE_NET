@@ -1,0 +1,24 @@
+@page
+@model OAUTH_VUE_NET.IdentityServer.Pages.Account.Logout.IndexModel
+@{
+    ViewData["Title"] = "Sign Out";
+}
+
+<div class="card">
+    <div class="logout-box">
+        <h1>Signed Out</h1>
+        <p>You have been successfully signed out.</p>
+        @if (!string.IsNullOrEmpty(Model.PostLogoutRedirectUri))
+        {
+            <a href="@Model.PostLogoutRedirectUri" class="btn btn-primary" style="text-decoration:none;display:inline-block;width:auto;">
+                Return to Application
+            </a>
+        }
+        else
+        {
+            <a href="/" class="btn btn-secondary" style="text-decoration:none;display:inline-block;width:auto;">
+                Home
+            </a>
+        }
+    </div>
+</div>

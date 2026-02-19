@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/BLL/">
+    <Project Path="src/BLL/OAUTH_VUE_NET.BLL/OAUTH_VUE_NET.BLL.csproj" />
+  </Folder>
+  <Folder Name="/src/Data/">
+    <Project Path="src/Data/OAUTH_VUE_NET.Data/OAUTH_VUE_NET.Data.csproj" />
+  </Folder>
+  <Folder Name="/src/IdentityServer/">
+    <Project Path="src/IdentityServer/OAUTH_VUE_NET.IdentityServer/OAUTH_VUE_NET.IdentityServer.csproj" />
+  </Folder>
+  <Folder Name="/src/WebAPI/">
+    <Project Path="src/WebAPI/OAUTH_VUE_NET.WebAPI/OAUTH_VUE_NET.WebAPI.csproj" />
+  </Folder>
+</Solution>

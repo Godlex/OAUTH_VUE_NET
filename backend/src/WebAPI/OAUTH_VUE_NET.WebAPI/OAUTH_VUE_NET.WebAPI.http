@@ -1,0 +1,6 @@
+@OAUTH_VUE_NET.WebAPI_HostAddress = http://localhost:5121
+
+GET {{OAUTH_VUE_NET.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
