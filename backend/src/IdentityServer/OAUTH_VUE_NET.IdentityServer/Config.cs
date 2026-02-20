@@ -39,7 +39,7 @@ public static class Config
             RequirePkce = true,
             AllowPlainTextPkce = false,
 
-            RedirectUris           = { "http://localhost:5173/callback" },
+            RedirectUris           = { "http://localhost:5173/callback", "http://localhost:5173/silent-renew" },
             PostLogoutRedirectUris = { "http://localhost:5173" },
             AllowedCorsOrigins     = { "http://localhost:5173" },
 

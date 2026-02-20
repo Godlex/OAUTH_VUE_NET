@@ -47,8 +47,17 @@ public class IndexModel : PageModel
             return Page();
         }
 
+        // Allow login by username or email
+        var user = await _userManager.FindByNameAsync(Input.Username)
+            ?? await _userManager.FindByEmailAsync(Input.Username);
+        if (user == null)
+        {
+            ErrorMessage = "Invalid username or password.";
+            return Page();
+        }
+
         var result = await _signInManager.PasswordSignInAsync(
-            Input.Username, Input.Password, Input.RememberLogin, lockoutOnFailure: true);
+            user.UserName!, Input.Password, Input.RememberLogin, lockoutOnFailure: true);
 
         if (result.Succeeded)
         {

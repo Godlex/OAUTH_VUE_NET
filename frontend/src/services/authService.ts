@@ -1,7 +1,8 @@
 import { UserManager, WebStorageStateStore, type User } from 'oidc-client-ts'
 
+const authority = import.meta.env.VITE_AUTHORITY ?? 'https://localhost:5001'
 const userManager = new UserManager({
-  authority: 'https://localhost:5001',
+  authority,
   client_id: 'vue-client',
   redirect_uri: `${window.location.origin}/callback`,
   post_logout_redirect_uri: `${window.location.origin}`,

@@ -20,7 +20,15 @@ public static class SeedData
     private static async Task EnsureUserAsync(UserManager<IdentityUser> userManager, string userName, string email, string password)
     {
         var user = await userManager.FindByNameAsync(userName);
-        if (user is not null) return;
+        if (user is not null)
+        {
+            // Ensure test accounts are never locked out
+            if (user.LockoutEnd.HasValue && user.LockoutEnd > DateTimeOffset.UtcNow)
+            {
+                await userManager.SetLockoutEndDateAsync(user, null);
+            }
+            return;
+        }
 
         user = new IdentityUser
         {
